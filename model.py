@@ -61,8 +61,8 @@ class TorchModel(nn.Module):
         super(TorchModel, self).__init__()
 
         self.model = models.resnet50(pretrained=True)
-        for param in self.model.parameters():
-          param.requires_grad = False
+        #for param in self.model.parameters():
+        #  param.requires_grad = False
         # 30 classes
         num_ftrs = self.model.fc.in_features
         self.model.fc = nn.Linear(num_ftrs, 30)
@@ -117,6 +117,7 @@ class TFDataset(torch.utils.data.Dataset):
         except tf.errors.OutOfRangeError:
             self.reset()
             wav, label = session.run(self.next_element)
+           
             x = self.log_spectrogram(wav.flatten(), sampling_rate=16000)
             #print("getitem calledd inside except!!!")
             #x_shape = x.shape
@@ -186,6 +187,8 @@ class TFDataset(torch.utils.data.Dataset):
         log_spec = np.log(specgram.T.astype(np.float32) + eps)
         log_spec = sklearn.preprocessing.normalize(log_spec,axis=0)
         image = Image.fromarray(log_spec.T, mode="RGB")
+        #image.to(self.device)
+        #print(image.size)
         convert = transforms.ToTensor()
         resize = transforms.Resize(24)
         tfms = transforms.Compose([
@@ -194,7 +197,7 @@ class TFDataset(torch.utils.data.Dataset):
              transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ])
-        '''#image = resize(image)
+        '''image = resize(image)
         #image = convert(image)
         image = tfms(image)
         # image = convert(image)
@@ -203,9 +206,14 @@ class TFDataset(torch.utils.data.Dataset):
 
         #print('Calculating mean and std of training dataset')
         #print(image.size)
+        #image = resize(image)
         batch_mean = np.mean(image,axis=(0, 1, 2))
         batch_std = np.std(image,axis=(0, 1, 2))
         image = convert(image)
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+        image.to(device)
+
         #print("tensor image size",image.shape)
 
         image = (image-batch_mean)/batch_std
@@ -261,13 +269,19 @@ class Model():
         # getting an object for the PyTorch Model class for Model Class
         # use CUDA if available
         self.pytorchmodel = TorchModel()
+        #model = TheModelClass(*args, **kwargs)
+        #print("current working directory :  "+os.getcwd())
+        #checkpoint = torch.load('./tmp.pth')
+        #self.pytorchmodel = checkpoint['model']
+        #self.pytorchmodel.load_state_dict(checkpoint['state_dict'],strict=False)
         print('\nPyModel Defined\n')
         #print(self.pytorchmodel)
         self.pytorchmodel.to(self.device)
+        self.pytorchmodel =  torch.nn.DataParallel(self.pytorchmodel)#, device_ids=[0, 1, 2, 3])
 
         # PyTorch Optimizer and Criterion
         self.criterion = nn.CrossEntropyLoss()
-        self.optimizer = torch.optim.Adam(self.pytorchmodel.parameters(), lr=1e-3)
+        self.optimizer = torch.optim.Adam(self.pytorchmodel.parameters(), lr=1e-2)
 
         # Attributes for managing time budget
         # Cumulated number of training steps
@@ -282,11 +296,11 @@ class Model():
 
         # PYTORCH
         # Critical number for early stopping
-        self.num_epochs_we_want_to_train = 100
+        self.num_epochs_we_want_to_train = 10
 
         # no of examples at each step/batch
         self.train_batch_size = 16
-        self.test_batch_size = 32
+        self.test_batch_size = 16
 
         # Tensorflow sessions to get the data from TFDataset
         self.train_session = tf.Session()
@@ -556,8 +570,14 @@ class Model():
                 data_iterator = iter(self.trainloader)
                 images, labels = next(data_iterator)
 
-            images = images.float().to(self.device)
-            labels = labels.float().to(self.device,dtype=torch.int64)
+            with torch.cuda.device(0):
+                #device = torch.device('cuda:0')
+                #images = images.float().to(device)
+                #labels = labels.float().to(device,dtype=torch.int64)
+                images = images.float().cuda()
+                labels = labels.float().cuda()
+                labels = labels.to(dtype=torch.int64)
+                
             optimizer.zero_grad()
 
             log_ps = self.pytorchmodel(images)
@@ -609,7 +629,8 @@ class Model():
             self.pytorchmodel.eval()
             for images, _ in dataloader:
                 if torch.cuda.is_available():
-                    images = images.float().cuda()
+                    with torch.cuda.device(0):
+                        images = images.float().cuda()
                 else:
                     images = images.float()
                 log_ps = self.pytorchmodel(images)
