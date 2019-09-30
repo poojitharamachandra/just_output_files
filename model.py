@@ -299,7 +299,7 @@ class Model():
         self.num_epochs_we_want_to_train = 10
 
         # no of examples at each step/batch
-        self.train_batch_size = 16
+        self.train_batch_size = 32
         self.test_batch_size = 16
 
         # Tensorflow sessions to get the data from TFDataset
