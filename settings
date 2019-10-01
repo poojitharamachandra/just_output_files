@@ -1,0 +1,8 @@
+train_batch_size = 64
+test_batch_size = 16
+lr =1e-2
+budget = 6000
+total run time = 1 hr 1 min
+job number = 3887695
+multiple gpus
+no downsampling
