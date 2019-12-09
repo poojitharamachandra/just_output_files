@@ -192,7 +192,7 @@ if __name__=="__main__":
     default_ingestion_program_dir = join(root_dir, "AutoDL_ingestion_program")
     default_code_dir = join(root_dir, "AutoDL_sample_code_submission")
     default_score_dir = join(root_dir, "AutoDL_scoring_output")
-    default_time_budget = 6000
+    default_time_budget = 1200
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_dir', type=str,
                         default=default_dataset_dir,
@@ -386,12 +386,12 @@ if __name__=="__main__":
 
     print("saving learned model... to ......."+os.getcwd()+"/mymodel.pth")
     #print(M.pytorchmodel)
-    path = os.path.join(os.getcwd(),"mymodel.pth")
+    path = os.path.join(os.getcwd(),"mymodel_fromkit_images.pth")
     print(path)
     print('current working directory : '+os.getcwd())
-    print(M.pytorchmodel.state_dict().keys())
+    #print(M.pytorchmodel.state_dict().keys())
     torch.save(M.pytorchmodel,path)
-    torch.save({'state_dict': M.pytorchmodel.module.state_dict()}, os.path.join(os.getcwd(),'tmp.pth'))
+    torch.save({'state_dict': M.pytorchmodel.module.state_dict()}, os.path.join(os.getcwd(),'fromkit_images.pth'))
     
 
 

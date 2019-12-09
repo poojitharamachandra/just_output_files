@@ -1,8 +1,10 @@
 train_batch_size = 64
 test_batch_size = 16
-lr =1e-2
-budget = 6000
-total run time = 1 hr 1 min
-job number = 3887695
+lr = 0.00012173481862884112
+budget = 24000
+total run time = 4 hr 
+job number = 5788450
 multiple gpus
-no downsampling
+downsampling to 224
+tf record created from spectrogrm images
+pretrained model from hpo and trained here also (have to check why we still start from acc 28%)

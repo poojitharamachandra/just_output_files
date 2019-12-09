@@ -37,7 +37,7 @@ import torch
 import torch.nn as nn
 import torchvision
 import tensorflow as tf
-
+import cv2
 # example of global centering (subtract mean)
 from numpy import asarray
 from PIL import Image
@@ -53,6 +53,8 @@ from scipy import signal
 from PIL import Image
 from  torchvision import transforms
 import sklearn.preprocessing
+from torch.optim.lr_scheduler import StepLR
+from sklearn.preprocessing import LabelBinarizer
 
 # PyTorch Model class
 class TorchModel(nn.Module):
@@ -61,11 +63,11 @@ class TorchModel(nn.Module):
         super(TorchModel, self).__init__()
 
         self.model = models.resnet50(pretrained=True)
-        #for param in self.model.parameters():
-        #  param.requires_grad = False
-        # 30 classes
+        for param in self.model.parameters():
+          param.requires_grad = False
+        #30 classes
         num_ftrs = self.model.fc.in_features
-        self.model.fc = nn.Linear(num_ftrs, 30)
+        self.model.fc = nn.Linear(num_ftrs, 9)
         #print(self.model)
         #self.log_softmax = nn.LogSoftmax(dim=1)
 
@@ -73,18 +75,6 @@ class TorchModel(nn.Module):
         out = self.model(x)
         #out = self.log_softmax(out)
         return out
-
-    def get_fc_size(self, input_shape):
-        ''' function to get the size for Linear layers
-        with given number of CNN layers
-        '''
-        sample_input = Variable(torch.rand(1, *input_shape))
-        output_feat = self.forward_cnn(sample_input)
-        out_shape = output_feat.shape
-        n_size = output_feat.data.view(1, -1).size(1)
-        return n_size, out_shape
-
-
 
 
 # PyTorch Dataset to get data from tensorflow Dataset.
@@ -107,119 +97,41 @@ class TFDataset(torch.utils.data.Dataset):
         return self.num_samples
 
     def __getitem__(self, index):
-
-        #print("getitem calledd!!!")
-
         session = self.session if self.session is not None else tf.Session()
         try:
-            wav, label = session.run(self.next_element)
-            x = self.log_spectrogram(wav.flatten(), sampling_rate=16000)
+            example, label = session.run(self.next_element)
+            example = np.squeeze(example, axis=0)
+            #t = example.transpose(2,1,0)
+            #print(t.shape)
+            #print(example.shape)
+            example = pre_process(example.transpose(1,0,2))
+            #print(example.shape)
         except tf.errors.OutOfRangeError:
             self.reset()
-            wav, label = session.run(self.next_element)
-           
-            x = self.log_spectrogram(wav.flatten(), sampling_rate=16000)
-            #print("getitem calledd inside except!!!")
-            #x_shape = x.shape
-            #print(x.shape)
-            #x = asarray(x)
-            #pixels = x.astype('float32')
-            #x = sklearn.preprocessing.normalize(x.flatten())
-            #x=np.reshape(x,x_shape)
-            #scaler = StandardScaler()
+            example, label = session.run(self.next_element)
+            example = np.squeeze(example, axis=0)
+            example = pre_process(example.transpose(1,0,2))
+            #print(example.shape)
+            #print("label while loading",np.argmax(label))
+        return example, np.argmax(label)
 
 
-            #self.pop_mean.append(batch_mean)
-            #self.pop_std.append(batch_std)
+def pre_process(x):
+    #print(x.shape)
+    mean = np.mean(x,axis=(0, 1, 2))
+    std = np.std(x,axis=(0, 1, 2))
+    x = cv2.resize(x,dsize=(224,224),interpolation=cv2.INTER_CUBIC)
 
-
-        '''pop_mean = np.array(self.pop_mean).mean()
-        pop_std = np.array(self.pop_std).mean()
-        print(self.pop_mean)
-        print(self.pop_std)
-        
-        #x = (x-pop_mean)/pop_std
-        convert = tfms = transforms.Compose([       
-                #transforms.ToPILImage(),
-                transforms.ToTensor(),
-                transforms.Normalize(mean=pop_mean, std=pop_std)
+    train_transforms = transforms.Compose([
+            #transforms.Resize((224, 224)),
+            transforms.ToTensor(),
+            #transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+            #transforms.Normalize(mean=mean, std=std)
         ])
-        
-        print(x)
 
-        for im in x:
-            im = convert(im)
-
-        #print(x.size)'''
-        '''x_ar=[]
-        for x_ in x:
-            print(x_)
-            #x_ = Image.fromarray(x_, mode="RGB")
-            x_change = x_
-            #x_change = convert(x_)
-            x_change = (x_change-pop_mean)/pop_std
-            print(x_change)
-            x_ar.append(x_change)
-        x = np.vstack(x_ar)'''
-        ##return example.transpose(3, 0, 1, 2), label
-        return x,np.argmax(label)
-
-    def log_spectrogram (self,audio, sampling_rate, window_size=20,
-                   step_size=10, eps=1e-10):
-
-        nperseg = int(round(window_size * sampling_rate / 1000))
-
-        # noverlap is the number of samples to overlap
-        # between current window and next windows
-        # 50% overlap (since step size=10, window_size=20,
-        #                         step_size is 50% of window_size)
-        # Example:step_size=10
-        # noverlap = 10 * 44100/1000 = 441 (samples)
-        noverlap = int(round(step_size * sampling_rate / 1000))
-        freqs, times, specgram = signal.spectrogram(
-            audio, sampling_rate, window='hann', nperseg=nperseg,
-            noverlap=noverlap, detrend=False)
-
-        # Note: We are adding eps to spectrogram
-        # before performing log to avoid errors since log(0) is undefined
-        # eps - epsilon - very small value close to 0
-        #       here it is 1e-10 => 0.0000000001
-        log_spec = np.log(specgram.T.astype(np.float32) + eps)
-        log_spec = sklearn.preprocessing.normalize(log_spec,axis=0)
-        image = Image.fromarray(log_spec.T, mode="RGB")
-        #image.to(self.device)
-        #print(image.size)
-        convert = transforms.ToTensor()
-        resize = transforms.Resize(24)
-        tfms = transforms.Compose([
-             transforms.Resize(24),
-             #transforms.CenterCrop(24),
-             transforms.ToTensor(),
-            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-        ])
-        '''image = resize(image)
-        #image = convert(image)
-        image = tfms(image)
-        # image = convert(image)
-        #print("tensor image size",image.shape)'''
-
-
-        #print('Calculating mean and std of training dataset')
-        #print(image.size)
-        #image = resize(image)
-        batch_mean = np.mean(image,axis=(0, 1, 2))
-        batch_std = np.std(image,axis=(0, 1, 2))
-        image = convert(image)
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-        image.to(device)
-
-        #print("tensor image size",image.shape)
-
-        image = (image-batch_mean)/batch_std
-
-
-        return image#,batch_mean,batch_std
+    x = train_transforms(x)
+    x = (x-mean)/std
+    return x
 
 
 class Model():
@@ -253,27 +165,27 @@ class Model():
               '\nMoving Model and Data into the device...')
 
         # Attributes for preprocessing
-        self.default_image_size = (13, 32)
-        self.default_sequence_length = 16000
+        self.default_image_size = (224, 224)
+        #self.default_sequence_length = 16000
+        self.default_num_frames = 0
         self.default_shuffle_buffer = 100
-        self.default_num_frames = 16000
+        #self.default_num_frames = 16000
 
-        if row_count == -1 or col_count == -1:
+        if row_count == -1 or col_count == -1 :
             row_count = self.default_image_size[0]
             col_count = self.default_image_size[1]
-        if sequence_size == -1: sequence_size = self.default_sequence_length
+        if sequence_size == -1: sequence_size = self.default_num_frames
         self.input_shape = (sequence_size, channel,row_count, col_count)
         print('\n\nINPUT SHAPE = ', self.input_shape)
-        self.input_dim = self.default_image_size[0]
 
         # getting an object for the PyTorch Model class for Model Class
         # use CUDA if available
         self.pytorchmodel = TorchModel()
         #model = TheModelClass(*args, **kwargs)
-        #print("current working directory :  "+os.getcwd())
-        #checkpoint = torch.load('./tmp.pth')
+        print("current working directory :  "+os.getcwd())
+        checkpoint = torch.load('../hpo/incumbent_small_dict.pth')
         #self.pytorchmodel = checkpoint['model']
-        #self.pytorchmodel.load_state_dict(checkpoint['state_dict'],strict=False)
+        self.pytorchmodel.load_state_dict(checkpoint['state_dict'],strict=False)
         print('\nPyModel Defined\n')
         #print(self.pytorchmodel)
         self.pytorchmodel.to(self.device)
@@ -281,7 +193,11 @@ class Model():
 
         # PyTorch Optimizer and Criterion
         self.criterion = nn.CrossEntropyLoss()
-        self.optimizer = torch.optim.Adam(self.pytorchmodel.parameters(), lr=1e-2)
+        #self.criterion = nn.NLLLoss()
+        self.optimizer = torch.optim.Adam(self.pytorchmodel.parameters(),lr = 0.00012173481862884112)
+        #self.optimizer.load_state_dict(checkpoint['optimizer'])
+        #self.optimizer = torch.optim.SGD(self.pytorchmodel.parameters(), lr=1e-2)
+        #self.scheduler = StepLR(self.optimizer, step_size=4, gamma=0.01)
 
         # Attributes for managing time budget
         # Cumulated number of training steps
@@ -296,7 +212,7 @@ class Model():
 
         # PYTORCH
         # Critical number for early stopping
-        self.num_epochs_we_want_to_train = 10
+        self.num_epochs_we_want_to_train = 2000
 
         # no of examples at each step/batch
         self.train_batch_size = 64
@@ -561,7 +477,8 @@ class Model():
         Return:
           None, updates the model parameters
         '''
-        self.pytorchmodel.train()
+        #self.pytorchmodel.train()
+        self.pytorchmodel.eval()
         data_iterator = iter(self.trainloader)
         for i in range(steps):
             try:
@@ -577,7 +494,9 @@ class Model():
                 images = images.float().cuda()
                 labels = labels.float().cuda()
                 labels = labels.to(dtype=torch.int64)
-                
+            #if hasattr(self, 'scheduler'):
+                #self.scheduler.step()
+   
             optimizer.zero_grad()
 
             log_ps = self.pytorchmodel(images)
@@ -624,19 +543,50 @@ class Model():
         Return:
           preds: Predictions of the model as Numpy Array.
         '''
+        labels = torch.tensor((),dtype=torch.long)
         preds = []
+        
         with torch.no_grad():
             self.pytorchmodel.eval()
-            for images, _ in dataloader:
+            for images, label in dataloader:
                 if torch.cuda.is_available():
                     with torch.cuda.device(0):
                         images = images.float().cuda()
                 else:
                     images = images.float()
                 log_ps = self.pytorchmodel(images)
-                pred = torch.sigmoid(log_ps).data > 0.5
+                #print("label",label)
+                #print("type of labels",type(label))
+                #pred = self.pytorchmodel(images)
+                #pred = pred > 0.5
+                #print("log ps",log_ps)
+                #max_p = log_ps.max(dim=1)[0]
+                
+                max_p,_ = torch.max(log_ps.data,1)
+                max_p = torch.reshape(max_p , (log_ps.shape[0],1))
+                labels=torch.cat((labels,label.cpu()),0)
+                #print("max value",max_p)
+                #print(log_ps.shape)
+                #one_hot = torch.FloatTensor(log_ps.shape)
+                #one_hot.zero_()
+                #one_hot.scatter_(0, max_p, 1)
+                #p =  np.argmax(np.squeeze(log_ps.cpu()))
+                #max_p =  torch.max(np.squeeze(log_ps.cpu()))
+                #print("class :",p.item())
+                #pred = torch.sigmoid(log_ps).data > 0.5
+                #pred = np.exp(log_ps.cpu()) > 0.5
+                pred = log_ps == max_p
                 preds.append(pred.cpu().numpy())
+                #pred = torch.exp(log_ps).data > 1
+                #print(pred)
+                #pred = np.argmax(np.squeeze(log_ps.cpu()))
+                #pred = log_ps == max_p.item()
+                #pred = log_ps.max(dim=1)[1]
+                #print("prediction calc.",pred)
+                #preds.append(pred.cpu().numpy())
         preds = np.vstack(preds)
+        #print("type of predictions :",type(preds))
+
         return preds
 
     def choose_to_stop_early(self):
