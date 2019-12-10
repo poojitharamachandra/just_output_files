@@ -1,0 +1,807 @@
+Workingdir: /home/ramachap/autodl_starting_kit_stable
+Started at Mon Dec  9 21:20:19 CET 2019
+Running job cnn_p_res-job using 32 cpus per node with given JID 5797860 on queue meta_gpu-x
+virtual environment 
+2019-12-09 21:20:29,720 INFO ingestion.py: ===== Start ingestion program. Version: v20190709 =====
+2019-12-09 21:20:32,851 INFO ingestion.py: ************************************************
+2019-12-09 21:20:32,851 INFO ingestion.py: ******** Processing dataset Starcraft ********
+2019-12-09 21:20:32,852 INFO ingestion.py: ************************************************
+2019-12-09 21:20:32,852 INFO ingestion.py: Reading training set and test set...
+2019-12-09 21:20:34,831 INFO ingestion.py: Creating model...
+Device Found =  cuda 
+Moving Model and Data into the device...
+
+
+INPUT SHAPE =  (1, 3, 640, 480)
+current working directory :  /home/ramachap/autodl_starting_kit_stable
+
+PyModel Defined
+
+default time budget :1200
+remaining time : 59981.07675623894
+2019-12-09 21:20:48,644 INFO ingestion.py: Begin training the model...
+2019-12-09 21:20:48,644 INFO model.py: Begin training for another 10 steps...
+2019-12-09 21:20:48,650 INFO model.py: Tensor shape before preprocessing: (1, 640, 480, 3)
+2019-12-09 21:20:48,650 INFO model.py: Tensor shape after preprocessing: (1, 640, 480, 3)
+2019-12-09 21:20:58,273 INFO model.py: 10 steps trained. 9.60 sec used. Now total steps trained: 10. Total time used for training: 9.60 sec. Current estimated time per step: 9.60e-01 sec.
+2019-12-09 21:20:58,274 INFO ingestion.py: Finished training the model.
+2019-12-09 21:20:58,274 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:20:58,274 INFO model.py: Model already trained for 0.10495244342407346 epochs.
+2019-12-09 21:20:58,274 INFO model.py: Begin testing...
+2019-12-09 21:20:58,278 INFO model.py: Tensor shape before preprocessing: (1, 640, 480, 3)
+2019-12-09 21:20:58,279 INFO model.py: Tensor shape after preprocessing: (1, 640, 480, 3)
+2019-12-09 21:21:20,142 INFO model.py: [+] Successfully made one prediction. 21.87 sec used. Total time used for testing: 21.87 sec. Current estimated time for test: 2.19e+01 sec.
+2019-12-09 21:21:20,142 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:21:20,154 INFO ingestion.py: [+] 1 predictions made, time spent so far 50.43 sec
+2019-12-09 21:21:20,154 INFO ingestion.py: [+] Time left 59949.57 sec
+default time budget :1200
+remaining time : 59949.565898656845
+2019-12-09 21:21:20,154 INFO ingestion.py: Begin training the model...
+2019-12-09 21:21:20,154 INFO model.py: Begin training for another 2 steps...estimated time for this: 1.92 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:21:21,528 INFO score.py: [+] New prediction found. Now number of predictions made = 1
+2019-12-09 21:21:21,529 INFO score.py: Current area under learning curve for Starcraft: 0.1064
+2019-12-09 21:21:21,529 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1113.
+2019-12-09 21:21:21,529 INFO score.py: Accuracy of the latest prediction is 0.2796.
+2019-12-09 21:21:21,778 INFO model.py: 2 steps trained. 1.62 sec used. Now total steps trained: 12. Total time used for training: 11.23 sec. Current estimated time per step: 9.35e-01 sec.
+2019-12-09 21:21:21,779 INFO ingestion.py: Finished training the model.
+2019-12-09 21:21:21,779 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:21:21,779 INFO model.py: Model already trained for 0.12594293210888816 epochs.
+2019-12-09 21:21:21,779 INFO model.py: Begin testing...estimated time: 2.19e+01 sec.
+2019-12-09 21:21:43,427 INFO model.py: [+] Successfully made one prediction. 21.65 sec used. Total time used for testing: 43.52 sec. Current estimated time for test: 2.18e+01 sec.
+2019-12-09 21:21:43,427 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:21:43,439 INFO ingestion.py: [+] 2 predictions made, time spent so far 73.72 sec
+2019-12-09 21:21:43,439 INFO ingestion.py: [+] Time left 59926.28 sec
+default time budget :1200
+remaining time : 59926.28074502945
+2019-12-09 21:21:43,439 INFO ingestion.py: Begin training the model...
+2019-12-09 21:21:43,440 INFO model.py: Begin training for another 4 steps...estimated time for this: 3.74 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:21:44,236 INFO score.py: [+] New prediction found. Now number of predictions made = 2
+2019-12-09 21:21:44,236 INFO score.py: Current area under learning curve for Starcraft: 0.1107
+2019-12-09 21:21:44,237 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1161.
+2019-12-09 21:21:44,237 INFO score.py: Accuracy of the latest prediction is 0.2849.
+2019-12-09 21:21:46,741 INFO model.py: 4 steps trained. 3.30 sec used. Now total steps trained: 16. Total time used for training: 14.53 sec. Current estimated time per step: 9.08e-01 sec.
+2019-12-09 21:21:46,741 INFO ingestion.py: Finished training the model.
+2019-12-09 21:21:46,741 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:21:46,741 INFO model.py: Model already trained for 0.16792390947851754 epochs.
+2019-12-09 21:21:46,741 INFO model.py: Begin testing...estimated time: 2.18e+01 sec.
+2019-12-09 21:22:08,324 INFO model.py: [+] Successfully made one prediction. 21.58 sec used. Total time used for testing: 65.10 sec. Current estimated time for test: 2.17e+01 sec.
+2019-12-09 21:22:08,324 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:22:08,336 INFO ingestion.py: [+] 3 predictions made, time spent so far 98.62 sec
+2019-12-09 21:22:08,336 INFO ingestion.py: [+] Time left 59901.38 sec
+default time budget :1200
+remaining time : 59901.383714199066
+2019-12-09 21:22:08,336 INFO ingestion.py: Begin training the model...
+2019-12-09 21:22:08,337 INFO model.py: Begin training for another 8 steps...estimated time for this: 7.26 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:22:09,877 INFO score.py: [+] New prediction found. Now number of predictions made = 3
+2019-12-09 21:22:09,877 INFO score.py: Current area under learning curve for Starcraft: 0.1080
+2019-12-09 21:22:09,877 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1130.
+2019-12-09 21:22:09,877 INFO score.py: Accuracy of the latest prediction is 0.2816.
+2019-12-09 21:22:14,676 INFO model.py: 8 steps trained. 6.34 sec used. Now total steps trained: 24. Total time used for training: 20.87 sec. Current estimated time per step: 8.69e-01 sec.
+2019-12-09 21:22:14,676 INFO ingestion.py: Finished training the model.
+2019-12-09 21:22:14,676 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:22:14,676 INFO model.py: Model already trained for 0.2518858642177763 epochs.
+2019-12-09 21:22:14,676 INFO model.py: Begin testing...estimated time: 2.17e+01 sec.
+2019-12-09 21:22:35,856 INFO model.py: [+] Successfully made one prediction. 21.18 sec used. Total time used for testing: 86.28 sec. Current estimated time for test: 2.16e+01 sec.
+2019-12-09 21:22:35,856 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:22:35,868 INFO ingestion.py: [+] 4 predictions made, time spent so far 126.15 sec
+2019-12-09 21:22:35,869 INFO ingestion.py: [+] Time left 59873.85 sec
+default time budget :1200
+remaining time : 59873.851561546326
+2019-12-09 21:22:35,869 INFO ingestion.py: Begin training the model...
+2019-12-09 21:22:35,869 INFO model.py: Begin training for another 16 steps...estimated time for this: 13.91 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:22:36,541 INFO score.py: [+] New prediction found. Now number of predictions made = 4
+2019-12-09 21:22:36,541 INFO score.py: Current area under learning curve for Starcraft: 0.1117
+2019-12-09 21:22:36,541 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1174.
+2019-12-09 21:22:36,541 INFO score.py: Accuracy of the latest prediction is 0.2888.
+2019-12-09 21:22:48,225 INFO model.py: 16 steps trained. 12.36 sec used. Now total steps trained: 40. Total time used for training: 33.22 sec. Current estimated time per step: 8.31e-01 sec.
+2019-12-09 21:22:48,226 INFO ingestion.py: Finished training the model.
+2019-12-09 21:22:48,226 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:22:48,226 INFO model.py: Model already trained for 0.41980977369629385 epochs.
+2019-12-09 21:22:48,226 INFO model.py: Begin testing...estimated time: 2.16e+01 sec.
+2019-12-09 21:23:09,486 INFO model.py: [+] Successfully made one prediction. 21.26 sec used. Total time used for testing: 107.54 sec. Current estimated time for test: 2.15e+01 sec.
+2019-12-09 21:23:09,486 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:23:09,498 INFO ingestion.py: [+] 5 predictions made, time spent so far 159.78 sec
+2019-12-09 21:23:09,498 INFO ingestion.py: [+] Time left 59840.22 sec
+default time budget :1200
+remaining time : 59840.222402095795
+2019-12-09 21:23:09,498 INFO ingestion.py: Begin training the model...
+2019-12-09 21:23:09,498 INFO model.py: Begin training for another 32 steps...estimated time for this: 26.58 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:23:10,176 INFO score.py: [+] New prediction found. Now number of predictions made = 5
+2019-12-09 21:23:10,176 INFO score.py: Current area under learning curve for Starcraft: 0.1171
+2019-12-09 21:23:10,176 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1239.
+2019-12-09 21:23:10,176 INFO score.py: Accuracy of the latest prediction is 0.3007.
+2019-12-09 21:23:34,127 INFO model.py: 32 steps trained. 24.63 sec used. Now total steps trained: 72. Total time used for training: 57.85 sec. Current estimated time per step: 8.03e-01 sec.
+2019-12-09 21:23:34,128 INFO ingestion.py: Finished training the model.
+2019-12-09 21:23:34,128 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:23:34,128 INFO model.py: Model already trained for 0.755657592653329 epochs.
+2019-12-09 21:23:34,128 INFO model.py: Begin testing...estimated time: 2.15e+01 sec.
+2019-12-09 21:23:55,518 INFO model.py: [+] Successfully made one prediction. 21.39 sec used. Total time used for testing: 128.93 sec. Current estimated time for test: 2.15e+01 sec.
+2019-12-09 21:23:55,518 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:23:55,530 INFO ingestion.py: [+] 6 predictions made, time spent so far 205.81 sec
+2019-12-09 21:23:55,530 INFO ingestion.py: [+] Time left 59794.19 sec
+default time budget :1200
+remaining time : 59794.19018244743
+2019-12-09 21:23:55,530 INFO ingestion.py: Begin training the model...
+2019-12-09 21:23:55,530 INFO model.py: Begin training for another 64 steps...estimated time for this: 51.42 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:23:56,871 INFO score.py: [+] New prediction found. Now number of predictions made = 6
+2019-12-09 21:23:56,871 INFO score.py: Current area under learning curve for Starcraft: 0.1248
+2019-12-09 21:23:56,871 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1335.
+2019-12-09 21:23:56,871 INFO score.py: Accuracy of the latest prediction is 0.3072.
+2019-12-09 21:24:45,370 INFO model.py: 64 steps trained. 49.84 sec used. Now total steps trained: 136. Total time used for training: 107.69 sec. Current estimated time per step: 7.92e-01 sec.
+2019-12-09 21:24:45,371 INFO ingestion.py: Finished training the model.
+2019-12-09 21:24:45,371 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:24:45,371 INFO model.py: Model already trained for 1.427353230567399 epochs.
+2019-12-09 21:24:45,371 INFO model.py: Begin testing...estimated time: 2.15e+01 sec.
+2019-12-09 21:25:06,751 INFO model.py: [+] Successfully made one prediction. 21.38 sec used. Total time used for testing: 150.31 sec. Current estimated time for test: 2.15e+01 sec.
+2019-12-09 21:25:06,751 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:25:06,763 INFO ingestion.py: [+] 7 predictions made, time spent so far 277.04 sec
+2019-12-09 21:25:06,763 INFO ingestion.py: [+] Time left 59722.96 sec
+default time budget :1200
+remaining time : 59722.95714998245
+2019-12-09 21:25:06,763 INFO ingestion.py: Begin training the model...
+2019-12-09 21:25:06,763 INFO model.py: Begin training for another 128 steps...estimated time for this: 101.36 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:25:07,817 INFO score.py: [+] New prediction found. Now number of predictions made = 7
+2019-12-09 21:25:07,817 INFO score.py: Current area under learning curve for Starcraft: 0.1397
+2019-12-09 21:25:07,818 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1530.
+2019-12-09 21:25:07,818 INFO score.py: Accuracy of the latest prediction is 0.3336.
+2019-12-09 21:26:42,760 INFO model.py: 128 steps trained. 96.00 sec used. Now total steps trained: 264. Total time used for training: 203.69 sec. Current estimated time per step: 7.72e-01 sec.
+2019-12-09 21:26:42,760 INFO ingestion.py: Finished training the model.
+2019-12-09 21:26:42,760 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:26:42,761 INFO model.py: Model already trained for 2.7707445063955394 epochs.
+2019-12-09 21:26:42,761 INFO model.py: Begin testing...estimated time: 2.15e+01 sec.
+2019-12-09 21:27:04,101 INFO model.py: [+] Successfully made one prediction. 21.34 sec used. Total time used for testing: 171.65 sec. Current estimated time for test: 2.15e+01 sec.
+2019-12-09 21:27:04,101 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:27:04,113 INFO ingestion.py: [+] 8 predictions made, time spent so far 394.39 sec
+2019-12-09 21:27:04,113 INFO ingestion.py: [+] Time left 59605.61 sec
+default time budget :1200
+remaining time : 59605.60673689842
+2019-12-09 21:27:04,113 INFO ingestion.py: Begin training the model...
+2019-12-09 21:27:04,113 INFO model.py: Begin training for another 256 steps...estimated time for this: 197.52 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:27:05,524 INFO score.py: [+] New prediction found. Now number of predictions made = 8
+2019-12-09 21:27:05,524 INFO score.py: Current area under learning curve for Starcraft: 0.1673
+2019-12-09 21:27:05,525 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.1908.
+2019-12-09 21:27:05,525 INFO score.py: Accuracy of the latest prediction is 0.3882.
+2019-12-09 21:30:17,364 INFO model.py: 256 steps trained. 193.25 sec used. Now total steps trained: 520. Total time used for training: 396.94 sec. Current estimated time per step: 7.63e-01 sec.
+2019-12-09 21:30:17,365 INFO ingestion.py: Finished training the model.
+2019-12-09 21:30:17,365 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:30:17,365 INFO model.py: Model already trained for 5.45752705805182 epochs.
+2019-12-09 21:30:17,365 INFO model.py: Begin testing...estimated time: 2.15e+01 sec.
+2019-12-09 21:30:38,381 INFO model.py: [+] Successfully made one prediction. 21.02 sec used. Total time used for testing: 192.66 sec. Current estimated time for test: 2.14e+01 sec.
+2019-12-09 21:30:38,381 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:30:38,393 INFO ingestion.py: [+] 9 predictions made, time spent so far 608.67 sec
+2019-12-09 21:30:38,393 INFO ingestion.py: [+] Time left 59391.33 sec
+default time budget :1200
+remaining time : 59391.327310323715
+2019-12-09 21:30:38,393 INFO ingestion.py: Begin training the model...
+2019-12-09 21:30:38,393 INFO model.py: Begin training for another 512 steps...estimated time for this: 390.83 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:30:39,616 INFO score.py: [+] New prediction found. Now number of predictions made = 9
+2019-12-09 21:30:39,616 INFO score.py: Current area under learning curve for Starcraft: 0.1842
+2019-12-09 21:30:39,616 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.2158.
+2019-12-09 21:30:39,616 INFO score.py: Accuracy of the latest prediction is 0.4243.
+2019-12-09 21:36:53,058 INFO model.py: 512 steps trained. 374.67 sec used. Now total steps trained: 1032. Total time used for training: 771.60 sec. Current estimated time per step: 7.48e-01 sec.
+2019-12-09 21:36:53,059 INFO ingestion.py: Finished training the model.
+2019-12-09 21:36:53,059 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:36:53,059 INFO model.py: Model already trained for 10.831092161364381 epochs.
+2019-12-09 21:36:53,059 INFO model.py: Begin testing...estimated time: 2.14e+01 sec.
+2019-12-09 21:37:14,017 INFO model.py: [+] Successfully made one prediction. 20.96 sec used. Total time used for testing: 213.62 sec. Current estimated time for test: 2.14e+01 sec.
+2019-12-09 21:37:14,017 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:37:14,029 INFO ingestion.py: [+] 10 predictions made, time spent so far 1004.31 sec
+2019-12-09 21:37:14,029 INFO ingestion.py: [+] Time left 58995.69 sec
+default time budget :1200
+remaining time : 58995.69146490097
+2019-12-09 21:37:14,029 INFO ingestion.py: Begin training the model...
+2019-12-09 21:37:14,029 INFO model.py: Begin training for another 1024 steps...estimated time for this: 765.62 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:37:15,014 INFO score.py: [+] New prediction found. Now number of predictions made = 10
+2019-12-09 21:37:15,014 INFO score.py: Current area under learning curve for Starcraft: 0.2300
+2019-12-09 21:37:15,014 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.2900.
+2019-12-09 21:37:15,014 INFO score.py: Accuracy of the latest prediction is 0.4895.
+2019-12-09 21:49:44,912 INFO model.py: 1024 steps trained. 750.88 sec used. Now total steps trained: 2056. Total time used for training: 1522.49 sec. Current estimated time per step: 7.41e-01 sec.
+2019-12-09 21:49:44,912 INFO ingestion.py: Finished training the model.
+2019-12-09 21:49:44,912 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 21:49:44,912 INFO model.py: Model already trained for 21.578222367989504 epochs.
+2019-12-09 21:49:44,912 INFO model.py: Begin testing...estimated time: 2.14e+01 sec.
+2019-12-09 21:50:07,732 INFO model.py: [+] Successfully made one prediction. 22.82 sec used. Total time used for testing: 236.44 sec. Current estimated time for test: 2.15e+01 sec.
+2019-12-09 21:50:07,733 INFO ingestion.py: Finished making predictions.
+2019-12-09 21:50:07,745 INFO ingestion.py: [+] 11 predictions made, time spent so far 1778.02 sec
+2019-12-09 21:50:07,745 INFO ingestion.py: [+] Time left 58221.98 sec
+default time budget :1200
+remaining time : 58221.97543621063
+2019-12-09 21:50:07,745 INFO ingestion.py: Begin training the model...
+2019-12-09 21:50:07,745 INFO model.py: Begin training for another 2048 steps...estimated time for this: 1516.56 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 21:50:09,214 INFO score.py: [+] New prediction found. Now number of predictions made = 11
+2019-12-09 21:50:09,214 INFO score.py: Current area under learning curve for Starcraft: 0.2633
+2019-12-09 21:50:09,214 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.3511.
+2019-12-09 21:50:09,214 INFO score.py: Accuracy of the latest prediction is 0.5395.
+2019-12-09 22:16:36,746 INFO model.py: 2048 steps trained. 1589.00 sec used. Now total steps trained: 4104. Total time used for training: 3111.49 sec. Current estimated time per step: 7.58e-01 sec.
+2019-12-09 22:16:36,747 INFO ingestion.py: Finished training the model.
+2019-12-09 22:16:36,747 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 22:16:36,747 INFO model.py: Model already trained for 43.07248278123975 epochs.
+2019-12-09 22:16:36,747 INFO model.py: Begin testing...estimated time: 2.15e+01 sec.
+2019-12-09 22:17:00,971 INFO model.py: [+] Successfully made one prediction. 24.22 sec used. Total time used for testing: 260.66 sec. Current estimated time for test: 2.17e+01 sec.
+2019-12-09 22:17:00,971 INFO ingestion.py: Finished making predictions.
+2019-12-09 22:17:00,984 INFO ingestion.py: [+] 12 predictions made, time spent so far 3391.26 sec
+2019-12-09 22:17:00,984 INFO ingestion.py: [+] Time left 56608.74 sec
+default time budget :1200
+remaining time : 56608.73633790016
+2019-12-09 22:17:00,984 INFO ingestion.py: Begin training the model...
+2019-12-09 22:17:00,984 INFO model.py: Begin training for another 4096 steps...estimated time for this: 3105.42 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 22:17:01,986 INFO score.py: [+] New prediction found. Now number of predictions made = 12
+2019-12-09 22:17:01,986 INFO score.py: Current area under learning curve for Starcraft: 0.3135
+2019-12-09 22:17:01,986 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.4604.
+2019-12-09 22:17:01,986 INFO score.py: Accuracy of the latest prediction is 0.6243.
+2019-12-09 23:13:59,064 INFO model.py: 4096 steps trained. 3418.08 sec used. Now total steps trained: 8200. Total time used for training: 6529.57 sec. Current estimated time per step: 7.96e-01 sec.
+2019-12-09 23:13:59,065 INFO ingestion.py: Finished training the model.
+2019-12-09 23:13:59,065 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-09 23:13:59,065 INFO model.py: Model already trained for 86.06100360774025 epochs.
+2019-12-09 23:13:59,065 INFO model.py: Begin testing...estimated time: 2.17e+01 sec.
+2019-12-09 23:14:22,947 INFO model.py: [+] Successfully made one prediction. 23.88 sec used. Total time used for testing: 284.54 sec. Current estimated time for test: 2.19e+01 sec.
+2019-12-09 23:14:22,947 INFO ingestion.py: Finished making predictions.
+2019-12-09 23:14:22,959 INFO ingestion.py: [+] 13 predictions made, time spent so far 6833.24 sec
+2019-12-09 23:14:22,959 INFO ingestion.py: [+] Time left 53166.76 sec
+default time budget :1200
+remaining time : 53166.76097512245
+2019-12-09 23:14:22,959 INFO ingestion.py: Begin training the model...
+2019-12-09 23:14:22,959 INFO model.py: Begin training for another 8192 steps...estimated time for this: 6523.20 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-09 23:14:24,434 INFO score.py: [+] New prediction found. Now number of predictions made = 13
+2019-12-09 23:14:24,434 INFO score.py: Current area under learning curve for Starcraft: 0.3406
+2019-12-09 23:14:24,434 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.5352.
+2019-12-09 23:14:24,435 INFO score.py: Accuracy of the latest prediction is 0.6770.
+2019-12-10 01:04:33,144 INFO model.py: 8192 steps trained. 6610.18 sec used. Now total steps trained: 16392. Total time used for training: 13139.75 sec. Current estimated time per step: 8.02e-01 sec.
+2019-12-10 01:04:33,145 INFO ingestion.py: Finished training the model.
+2019-12-10 01:04:33,145 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-10 01:04:33,145 INFO model.py: Model already trained for 172.03804526074123 epochs.
+2019-12-10 01:04:33,145 INFO model.py: Begin testing...estimated time: 2.19e+01 sec.
+2019-12-10 01:04:55,345 INFO model.py: [+] Successfully made one prediction. 22.20 sec used. Total time used for testing: 306.74 sec. Current estimated time for test: 2.19e+01 sec.
+2019-12-10 01:04:55,346 INFO ingestion.py: Finished making predictions.
+2019-12-10 01:04:55,357 INFO ingestion.py: [+] 14 predictions made, time spent so far 13465.64 sec
+2019-12-10 01:04:55,358 INFO ingestion.py: [+] Time left 46534.36 sec
+default time budget :1200
+remaining time : 46534.36249876022
+2019-12-10 01:04:55,358 INFO ingestion.py: Begin training the model...
+2019-12-10 01:04:55,358 INFO model.py: Begin training for another 16384 steps...estimated time for this: 13133.34 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-10 01:04:56,177 INFO score.py: [+] New prediction found. Now number of predictions made = 14
+2019-12-10 01:04:56,177 INFO score.py: Current area under learning curve for Starcraft: 0.3635
+2019-12-10 01:04:56,177 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.6216.
+2019-12-10 01:04:56,177 INFO score.py: Accuracy of the latest prediction is 0.7401.
+2019-12-10 04:35:01,978 INFO model.py: 16384 steps trained. 12606.62 sec used. Now total steps trained: 32776. Total time used for training: 25746.37 sec. Current estimated time per step: 7.86e-01 sec.
+2019-12-10 04:35:01,979 INFO ingestion.py: Finished training the model.
+2019-12-10 04:35:01,979 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-10 04:35:01,979 INFO model.py: Model already trained for 343.9921285667432 epochs.
+2019-12-10 04:35:01,980 INFO model.py: Begin testing...estimated time: 2.19e+01 sec.
+2019-12-10 04:35:23,472 INFO model.py: [+] Successfully made one prediction. 21.49 sec used. Total time used for testing: 328.24 sec. Current estimated time for test: 2.19e+01 sec.
+2019-12-10 04:35:23,473 INFO ingestion.py: Finished making predictions.
+2019-12-10 04:35:23,485 INFO ingestion.py: [+] 15 predictions made, time spent so far 26093.76 sec
+2019-12-10 04:35:23,485 INFO ingestion.py: [+] Time left 33906.24 sec
+default time budget :1200
+remaining time : 33906.23515677452
+2019-12-10 04:35:23,485 INFO ingestion.py: Begin training the model...
+2019-12-10 04:35:23,485 INFO model.py: Begin training for another 32768 steps...estimated time for this: 25740.09 sec.
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-10 04:35:24,769 INFO score.py: [+] New prediction found. Now number of predictions made = 15
+2019-12-10 04:35:24,769 INFO score.py: Current area under learning curve for Starcraft: 0.3725
+2019-12-10 04:35:24,769 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.6753.
+2019-12-10 04:35:24,769 INFO score.py: Accuracy of the latest prediction is 0.7796.
+2019-12-10 11:59:54,236 INFO model.py: 32768 steps trained. 26670.75 sec used. Now total steps trained: 65544. Total time used for training: 52417.13 sec. Current estimated time per step: 8.00e-01 sec.
+2019-12-10 11:59:54,238 INFO ingestion.py: Finished training the model.
+2019-12-10 11:59:54,238 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-10 11:59:54,238 INFO model.py: Model already trained for 687.9002951787471 epochs.
+2019-12-10 11:59:54,238 INFO model.py: Begin testing...estimated time: 2.19e+01 sec.
+2019-12-10 12:00:17,753 INFO model.py: [+] Successfully made one prediction. 23.52 sec used. Total time used for testing: 351.75 sec. Current estimated time for test: 2.20e+01 sec.
+2019-12-10 12:00:17,753 INFO ingestion.py: Finished making predictions.
+2019-12-10 12:00:17,766 INFO ingestion.py: [+] 16 predictions made, time spent so far 52788.05 sec
+2019-12-10 12:00:17,766 INFO ingestion.py: [+] Time left 7211.95 sec
+default time budget :1200
+remaining time : 7211.954201698303
+2019-12-10 12:00:17,766 INFO ingestion.py: Begin training the model...
+2019-12-10 12:00:17,766 INFO model.py: Not enough time remaining for training. Estimated time for training per step: 0.80, but remaining time budget is: 7211.95. Skipping...
+2019-12-10 12:00:17,766 INFO ingestion.py: Finished training the model.
+2019-12-10 12:00:17,766 INFO ingestion.py: Begin testing the model by making predictions on test set...
+2019-12-10 12:00:17,766 INFO ingestion.py: Finished making predictions.
+2019-12-10 12:00:17,766 INFO ingestion.py: The method model.test returned `None`. Stop train/predict process.
+2019-12-10 12:00:17,767 INFO ingestion.py: Wrote the file end.txt marking the end of ingestion.
+2019-12-10 12:00:17,767 INFO ingestion.py: [+] Done. Ingestion program successfully terminated.
+2019-12-10 12:00:17,767 INFO ingestion.py: [+] Overall time spent 52788.05 sec 
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+2019-12-10 12:00:19,723 INFO score.py: [+] New prediction found. Now number of predictions made = 16
+2019-12-10 12:00:19,723 INFO score.py: Current area under learning curve for Starcraft: 0.3762
+2019-12-10 12:00:19,723 INFO score.py: (2 * AUC - 1) of the latest prediction is 0.7288.
+2019-12-10 12:00:19,723 INFO score.py: Accuracy of the latest prediction is 0.8197.
+2019-12-10 12:00:19,724 INFO score.py: Detected ingestion program had stopped running because an 'end.txt' file is written by ingestion. Stop scoring now.
+2019-12-10 12:00:19,724 INFO score.py: Final area under learning curve for Starcraft: 0.3762
+2019-12-10 12:00:19,727 INFO score.py: Computing error bars with 10 scorings...
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_0' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_0'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_1' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_1'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_10' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_10'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_11' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_11'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_12' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_12'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_13' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_13'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_14' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_14'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_15' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_15'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_2' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_2'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_3' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_3'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_4' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_4'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_5' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_5'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_6' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_6'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_7' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_7'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_8' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_8'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/Starcraft.predict_9' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/Starcraft.predict_9'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/end.txt' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/end.txt'
+'/home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission/start.txt' -> '/home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output/start.txt'
+/home/ramachap/autodl_starting_kit_stable/mymodel_fromkit_images.pth
+current working directory : /home/ramachap/autodl_starting_kit_stable
+2019-12-10 12:00:20,120 INFO ingestion.py: [Ingestion terminated]
+solution
+<class 'numpy.ndarray'>
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 1.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 1.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 1.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 1. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 1.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 1.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 1. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 0. 1. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 1. 0. 0.]
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [1. 0. 0. ... 0. 0. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 1.]
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [1. 0. 0. ... 0. 0. 0.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 0. 1.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 0. 1.]]
+solution
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]]
+prediction
+<class 'numpy.ndarray'>
+[[0. 1. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]
+ ...
+ [0. 0. 0. ... 0. 1. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 1. 0.]]
+2019-12-10 12:00:20,441 INFO score.py: 
+Latest prediction NAUC:
+* Mean: 0.7290463005181091
+* Standard deviation: 0.01853045904163034
+* Variance: 0.0003433779122935396
+2019-12-10 12:00:20,442 INFO score.py: [+] Successfully finished scoring! Scoring duration: 52789.51 sec. Ingestion duration: 52788.05 sec. The score of your algorithm on the task 'Starcraft' is: 0.376243.
+2019-12-10 12:00:20,442 INFO score.py: [Scoring terminated]
+DONE
+Finished at Tue Dec 10 12:00:21 CET 2019

@@ -144,7 +144,7 @@ if __name__ == '__main__':
                                      'AutoDL_sample_data', 'miniciao')
   default_code_dir = os.path.join(default_starting_kit_dir,
                                      'AutoDL_sample_code_submission')
-  default_time_budget = 24000
+  default_time_budget = 60000
 
   tf.flags.DEFINE_string('dataset_dir', default_dataset_dir,
                         "Directory containing the content (e.g. adult.data/ + "

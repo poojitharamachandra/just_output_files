@@ -384,7 +384,7 @@ if __name__=="__main__":
           logger.info("[-] Done, but encountered some errors during ingestion.")
           logger.info("[-] Overall time spent %5.2f sec " % overall_time_spent)
 
-    print("saving learned model... to ......."+os.getcwd()+"/mymodel.pth")
+    #print("saving learned model... to ......."+path)
     #print(M.pytorchmodel)
     path = os.path.join(os.getcwd(),"mymodel_fromkit_images.pth")
     print(path)

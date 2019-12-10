@@ -1,9 +1,9 @@
-train_batch_size = 64
+in_batch_size = 64
 test_batch_size = 16
 lr = 0.00012173481862884112
-budget = 24000
-total run time = 4 hr 
-job number = 5788450
+budget = 60000
+total run time = 14 hr 
+job number = 5797860
 multiple gpus
 downsampling to 224
 tf record created from spectrogrm images

@@ -1,0 +1,60 @@
+2019-12-09 21:20:27 INFO run_local_test.py: ##################################################
+2019-12-09 21:20:27 INFO run_local_test.py: Begin running local test using
+2019-12-09 21:20:27 INFO run_local_test.py: code_dir = resnet_images
+2019-12-09 21:20:27 INFO run_local_test.py: dataset_dir = Starcraft
+2019-12-09 21:20:27 INFO run_local_test.py: ##################################################
+2019-12-09 21:20:27 INFO run_local_test.py: Cleaning existing output directory of last run: /home/ramachap/autodl_starting_kit_stable/AutoDL_sample_result_submission
+2019-12-09 21:20:27 INFO run_local_test.py: Cleaning existing output directory of last run: /home/ramachap/autodl_starting_kit_stable/AutoDL_scoring_output
+WARNING:tensorflow:From /home/ramachap/envs/autodl/lib/python3.5/site-packages/tensorflow/python/ops/tensor_array_ops.py:162: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/ramachap/autodl_starting_kit_stable/AutoDL_ingestion_program/dataset.py:234: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+2019-12-09 21:20:42.865221: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-09 21:20:43.426322: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55960f8f64f0 executing computations on platform CUDA. Devices:
+2019-12-09 21:20:43.426374: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-12-09 21:20:43.426388: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (1): GeForce GTX TITAN X, Compute Capability 5.2
+2019-12-09 21:20:43.426398: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (2): GeForce GTX TITAN X, Compute Capability 5.2
+2019-12-09 21:20:43.426409: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (3): GeForce GTX TITAN X, Compute Capability 5.2
+2019-12-09 21:20:43.451569: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2299960000 Hz
+2019-12-09 21:20:43.454461: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55960f8eab50 executing computations on platform Host. Devices:
+2019-12-09 21:20:43.454502: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-12-09 21:20:43.455260: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:02:00.0
+totalMemory: 11.93GiB freeMemory: 11.36GiB
+2019-12-09 21:20:43.455800: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.81GiB
+2019-12-09 21:20:43.456320: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:82:00.0
+totalMemory: 11.93GiB freeMemory: 11.81GiB
+2019-12-09 21:20:43.456833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:83:00.0
+totalMemory: 11.93GiB freeMemory: 11.81GiB
+2019-12-09 21:20:43.468064: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2019-12-09 21:20:48.632338: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-09 21:20:48.632388: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2019-12-09 21:20:48.632395: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2019-12-09 21:20:48.632410: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2019-12-09 21:20:48.632415: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2019-12-09 21:20:48.632419: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2019-12-09 21:20:48.633338: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11046 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.633861: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11218 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.634368: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11218 MB memory) -> physical GPU (device: 2, name: GeForce GTX TITAN X, pci bus id: 0000:82:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.634861: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11218 MB memory) -> physical GPU (device: 3, name: GeForce GTX TITAN X, pci bus id: 0000:83:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.639974: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2019-12-09 21:20:48.640269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-09 21:20:48.640294: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2019-12-09 21:20:48.640308: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2019-12-09 21:20:48.640326: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2019-12-09 21:20:48.640337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2019-12-09 21:20:48.640348: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2019-12-09 21:20:48.642310: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11046 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.642684: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11218 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.642992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11218 MB memory) -> physical GPU (device: 2, name: GeForce GTX TITAN X, pci bus id: 0000:82:00.0, compute capability: 5.2)
+2019-12-09 21:20:48.643373: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11218 MB memory) -> physical GPU (device: 3, name: GeForce GTX TITAN X, pci bus id: 0000:83:00.0, compute capability: 5.2)
