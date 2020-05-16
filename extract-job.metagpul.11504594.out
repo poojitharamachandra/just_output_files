@@ -1,0 +1,148 @@
+Workingdir: /home/ramachap/jinu_final/AutoDL
+Started at Sun May  3 20:48:45 CEST 2020
+Running job extract-job using 8 cpus per node with given JID 11504594 on queue meta_gpu-x
+['logs_new/espeak-starcraft-words___ESN___1587565453']
+['logs_new/espeak-starcraft-words___CNN_1D___1587771400']
+['logs_new/espeak-starcraft-words___LSTM___1588335254']
+[]
+we dont have results for  FCN
+################################### Dataset espeak-starcraft-words #######################################
+Best performing model: ESN
+Configuration: {'batch_size': 128, 'last_n_outputs': 48, 'hidden_dim': 664, 'steps_to_train': 63, 'optimizer': 'SGD', 'weight_decay': 0.01761158776051602, 'lr': 0.034993179827717526, 'leak_rate': 0.79636560523764, 'sparsity': 0.8592450547820508}
+Score: 0.8395142560232283
+
+
+['logs_new/espeak-starcraft-words___ESN___1587565453', 'logs_new/starcraft___ESN___1588354720']
+['logs_new/espeak-starcraft-words___CNN_1D___1587771400']
+['logs_new/espeak-starcraft-words___LSTM___1588335254']
+[]
+we dont have results for  FCN
+################################### Dataset starcraft #######################################
+Best performing model: ESN
+Configuration: {'batch_size': 128, 'last_n_outputs': 48, 'hidden_dim': 664, 'steps_to_train': 63, 'optimizer': 'SGD', 'weight_decay': 0.01761158776051602, 'lr': 0.034993179827717526, 'leak_rate': 0.79636560523764, 'sparsity': 0.8592450547820508}
+Score: 0.8395142560232283
+
+
+['logs_new/music_genre___ESN___1587313237']
+['logs_new/music_genre___CNN_1D___1587371320']
+['logs_new/music_genre___LSTM___1587430738']
+['logs_new/music_genre___FCN___1587488694']
+################################### Dataset music_genre #######################################
+Best performing model: CNN_1D
+Configuration: {'num_filters_2': 54, 'num_layers': 4, 'num_filters_1': 64, 'optimizer': 'SGD', 'batch_size': 64, 'weight_decay': 0.01317945101531455, 'num_filters_3': 45, 'steps_to_train': 83, 'kernel_size_4': 5, 'num_filters_4': 122, 'lr': 0.005010689560950694, 'kernel_size_3': 5, 'kernel_size_1': 5, 'kernel_size_2': 3}
+Score: 0.7499574350311098
+
+
+['logs_new/sick_no_sick___ESN___1587313237']
+['logs_new/sick_no_sick___CNN_1D___1587373445']
+['logs_new/sick_no_sick___LSTM___1587438029']
+['logs_new/sick_no_sick___FCN___1587530432']
+################################### Dataset sick_no_sick #######################################
+Best performing model: FCN
+Configuration: {'num_filters_2': 23, 'num_layers': 4, 'num_filters_1': 43, 'optimizer': 'SGD', 'batch_size': 32, 'weight_decay': 0.056904497206330486, 'num_filters_3': 101, 'steps_to_train': 51, 'kernel_size_4': 5, 'num_filters_4': 21, 'lr': 0.004652539335227233, 'kernel_size_3': 3, 'kernel_size_1': 5, 'kernel_size_2': 3}
+Score: 0.590461123544475
+
+
+['logs_new/music-speech___ESN___1587313237']
+['logs_new/music-speech___CNN_1D___1587360483']
+['logs_new/music-speech___LSTM___1587406615']
+['logs_new/music-speech___FCN___1587453068']
+################################### Dataset music-speech #######################################
+Best performing model: CNN_1D
+Configuration: {'num_filters_2': 20, 'num_layers': 4, 'num_filters_1': 46, 'optimizer': 'SGD', 'batch_size': 128, 'weight_decay': 0.011327893341039218, 'num_filters_3': 23, 'steps_to_train': 44, 'kernel_size_4': 5, 'num_filters_4': 36, 'lr': 0.002909644820516348, 'kernel_size_3': 7, 'kernel_size_1': 3, 'kernel_size_2': 3}
+Score: 0.9885665198348403
+
+
+['logs_new/google_audio_set___ESN___1587313237']
+['logs_new/google_audio_set___CNN_1D___1587394981']
+['logs_new/google_audio_set___LSTM___1587476295']
+['logs_new/google_audio_set___FCN___1587557546']
+################################### Dataset google_audio_set #######################################
+Best performing model: FCN
+Configuration: {'num_filters_2': 34, 'num_layers': 5, 'num_filters_1': 97, 'optimizer': 'SGD', 'batch_size': 16, 'kernel_size_2': 7, 'num_filters_5': 46, 'weight_decay': 0.01232644026369053, 'num_filters_3': 53, 'steps_to_train': 55, 'kernel_size_4': 7, 'num_filters_4': 128, 'lr': 0.029026125408854426, 'kernel_size_3': 3, 'kernel_size_1': 3, 'kernel_size_5': 3}
+Score: 0.24691477886405583
+
+
+['logs_new/number_mnist___ESN___1587313237']
+['logs_new/number_mnist___CNN_1D___1587361688']
+['logs_new/number_mnist___LSTM___1587414911']
+[]
+we dont have results for  FCN
+################################### Dataset number_mnist #######################################
+Best performing model: CNN_1D
+Configuration: {'num_filters_2': 48, 'num_layers': 5, 'num_filters_1': 98, 'optimizer': 'SGD', 'batch_size': 32, 'kernel_size_2': 7, 'num_filters_5': 75, 'weight_decay': 0.010994660862249971, 'num_filters_3': 38, 'steps_to_train': 37, 'kernel_size_4': 5, 'num_filters_4': 77, 'lr': 0.005187863982965252, 'kernel_size_3': 5, 'kernel_size_1': 7, 'kernel_size_5': 7}
+Score: 0.9716897007630847
+
+
+['logs_new/timit_accent___ESN___1587313319']
+['logs_new/timit_accent___CNN_1D___1587371508']
+['logs_new/timit_accent___LSTM___1587449432']
+['logs_new/timit_accent___FCN___1587510088']
+################################### Dataset timit_accent #######################################
+Best performing model: LSTM
+Configuration: {'batch_size': 16, 'last_n_outputs': 32, 'hidden_dim': 83, 'num_layers': 1, 'optimizer': 'SGD', 'weight_decay': 0.05804709696302581, 'lr': 0.0012110237585335757, 'steps_to_train': 77}
+Score: 0.03899348227263699
+
+
+['logs_new/urbansound___ESN___1587358849']
+['logs_new/urbansound___CNN_1D___1587466543']
+['logs_new/urbansound___LSTM___1587604241']
+['logs_new/urbansound___FCN___1587679711']
+################################### Dataset urbansound #######################################
+Best performing model: LSTM
+Configuration: {'batch_size': 128, 'last_n_outputs': 18, 'hidden_dim': 58, 'num_layers': 1, 'optimizer': 'Adam', 'weight_decay': 0.010275003924083672, 'lr': 0.002205882696903953, 'steps_to_train': 26}
+Score: 0.4040495908471148
+
+
+['logs_new/env-sound___ESN___1587445049']
+['logs_new/env-sound___CNN_1D___1587498770']
+['logs_new/env-sound___LSTM___1587575563']
+['logs_new/env-sound___FCN___1587641034']
+################################### Dataset env-sound #######################################
+Best performing model: FCN
+Configuration: {'num_filters_2': 94, 'num_layers': 3, 'num_filters_1': 36, 'optimizer': 'SGD', 'batch_size': 128, 'kernel_size_1': 3, 'num_filters_3': 96, 'steps_to_train': 56, 'weight_decay': 0.010186812097494963, 'lr': 0.008909202025982742, 'kernel_size_3': 7, 'kernel_size_2': 5}
+Score: 0.4589374970386262
+
+
+['logs_new/acoustic___ESN___1587496390']
+['logs_new/acoustic___CNN_1D___1587547982']
+['logs_new/acoustic___LSTM___1587602518']
+['logs_new/acoustic___FCN___1587654488']
+################################### Dataset acoustic #######################################
+Best performing model: FCN
+Configuration: {'num_filters_2': 73, 'num_layers': 5, 'num_filters_1': 63, 'optimizer': 'SGD', 'batch_size': 128, 'kernel_size_2': 3, 'num_filters_5': 47, 'weight_decay': 0.021995567502319124, 'num_filters_3': 33, 'steps_to_train': 13, 'kernel_size_4': 7, 'num_filters_4': 35, 'lr': 0.001564552359439052, 'kernel_size_3': 5, 'kernel_size_1': 5, 'kernel_size_5': 7}
+Score: 0.9077765678903665
+
+
+['logs_new/espeak-gender___ESN___1587499343']
+['logs_new/espeak-gender___CNN_1D___1587565133']
+['logs_new/espeak-gender___LSTM___1587636083']
+['logs_new/espeak-gender___FCN___1587705723']
+################################### Dataset espeak-gender #######################################
+Best performing model: FCN
+Configuration: {'num_filters_2': 86, 'num_layers': 5, 'num_filters_1': 37, 'optimizer': 'SGD', 'batch_size': 64, 'kernel_size_2': 5, 'num_filters_5': 44, 'weight_decay': 0.011910338910466525, 'num_filters_3': 33, 'steps_to_train': 53, 'kernel_size_4': 3, 'num_filters_4': 98, 'lr': 0.0029529041846138152, 'kernel_size_3': 7, 'kernel_size_1': 5, 'kernel_size_5': 3}
+Score: 0.9604489299193302
+
+
+['logs_new/espeak-numbers___ESN___1587505570']
+['logs_new/espeak-numbers___CNN_1D___1587555520']
+['logs_new/espeak-numbers___LSTM___1587613596']
+['logs_new/espeak-numbers___FCN___1587665631']
+################################### Dataset espeak-numbers #######################################
+Best performing model: LSTM
+Configuration: {'batch_size': 128, 'last_n_outputs': 49, 'hidden_dim': 77, 'num_layers': 1, 'optimizer': 'Adam', 'weight_decay': 0.011943501996991556, 'lr': 0.0022286118864399064, 'steps_to_train': 40}
+Score: 0.998862851048202
+
+
+['logs_new/librispeech___ESN___1587522137']
+['logs_new/librispeech___CNN_1D___1587577557']
+['logs_new/librispeech___LSTM___1587632305']
+['logs_new/librispeech___FCN___1587686719']
+################################### Dataset librispeech #######################################
+Best performing model: LSTM
+Configuration: {'batch_size': 128, 'last_n_outputs': 15, 'hidden_dim': 68, 'num_layers': 1, 'optimizer': 'Adam', 'weight_decay': 0.010775117704756374, 'lr': 0.0016611242578440156, 'steps_to_train': 18}
+Score: 0.9744074535258976
+
+
+DONE
+Finished at Sun May  3 20:48:46 CEST 2020
